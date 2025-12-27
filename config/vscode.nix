@@ -1,4 +1,8 @@
-{ vscode-with-extensions
+{ lib
+, symlinkJoin
+, vscode-extensions
+, vscode-utils
+, vscode-with-extensions
 , cppSupport ? false
 , haskellSupport ? false
 , pythonSupport ? false
@@ -46,7 +50,7 @@ symlinkJoin {
   name = "konex-config-vscode" + lib.optionalString (cppSupport) "-with-c"
     + lib.optionalString (haskellSupport) "-with-hs"
     + lib.optionalString (pythonSupport) "-with-py";
-  paths = [ emacs-noxExt ];
+  paths = [ vscodeExt ];
   postBuild = "echo vscode in one destination";
 }
 
