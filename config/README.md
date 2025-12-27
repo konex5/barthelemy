@@ -19,7 +19,7 @@ printf %q $PATH
 Example for emacs:
 
 ```bash
-nix-build --dry-run --expr 'with import ( builtins.fetchTarball { url = "https://github.com/NixOS/nixpkgs/archive/4d2b37a84fad1091b9de401eb450aae66f1a741e.tar.gz"; sha256 = "sha256:11w3wn2yjhaa5pv20gbfbirvjq6i3m7pqrq2msf0g7cv44vijwgw";}) {}; callPackage ./emacs.nix { cppSupport = true; haskellSupport = true; latexSupport = true; pythonSupport = true; }'
+nix-build --expr 'with import ( builtins.fetchTarball { url = "https://github.com/NixOS/nixpkgs/archive/4d2b37a84fad1091b9de401eb450aae66f1a741e.tar.gz"; sha256 = "sha256:11w3wn2yjhaa5pv20gbfbirvjq6i3m7pqrq2msf0g7cv44vijwgw";}) {}; callPackage ./emacs.nix { cppSupport = true; haskellSupport = true; latexSupport = true; pythonSupport = true; }'
 ```
 
 Example for vscode:
