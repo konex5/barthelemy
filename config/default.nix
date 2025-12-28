@@ -30,7 +30,7 @@ let
   };
 
   emacsExt = callPackage ./emacs.nix { };
-  # vimExt = ;
+  vimExt = callPackage ./vim.nix { };
   vscodeExt = callPackage ./vscode.nix { };
   together =
     symlinkJoin {
@@ -52,6 +52,7 @@ let
         # sublime-merge
         # typora
         emacsExt
+        vimExt
         vscodeExt
       ] ++ lib.optionals (hostPlatform.isLinux) [ ]
       ++ lib.optionals (cppSupport) [ clang-tools cmakeCurses ]
