@@ -23,7 +23,7 @@ let
               name = konex5
               email = fix@konex.dev
           [core]
-              editor = ${emacsExt}/bin/emacs
+              editor = emacs
       EOF'';
     executable = true;
     destination = "/bin/mygitconfig";
